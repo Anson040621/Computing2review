@@ -1,0 +1,16 @@
+{
+  "name": "zombie-siege",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "web-app/Connect4.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "docdash": "^2.0.2",
+    "mocha": "^11.1.0"
+  },
+  "dependencies": {
+    "ramda": "^0.30.1"
+  }
+}

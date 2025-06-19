@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dots and Boxes</title>
+    <link rel="stylesheet" href="dots-and-boxes.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Dots and Boxes</h1>
+    </header>
+
+    <aside id="home_player" class="sidebar" aria-label="Home Player Info">
+        <div class="player">
+            <input id="home_name" aria-label="Home player name" value="Player 1">
+            <div><strong>Score:</strong> <span id="home_score">0</span></div>
+        </div>
+        <div class="game_info">
+            <div id="home_player_type">Player 1</div>
+            <div id="home_player_color"></div>
+            <div id="home_ready">Your turn!</div>
+        </div>
+    </aside>
+
+    <main tabindex="-1">
+        <div id="game_board"></div>
+    </main>
+
+    <aside id="away_player" class="sidebar" aria-label="Away Player Info">
+        <div class="player">
+            <input id="away_name" aria-label="Away player name" value="Player 2">
+            <div><strong>Score:</strong> <span id="away_score">0</span></div>
+        </div>
+        <div class="game_info">
+            <div id="away_player_type">Player 2</div>
+            <div id="away_player_color"></div>
+            <div id="away_ready">Wait your turn...</div>
+        </div>
+    </aside>
+
+    <dialog id="result_dialog" tabindex="0" aria-label="Game over message">
+        <h2>Game Over</h2>
+        <div id="result_message">Player 1 has won the game!</div>
+        <div id="result_winner">Player 1 wins!</div>
+    </dialog>
+
+    <script type="module" src="dots-and-boxes-main.js"></script>
+</body>
+
+</html>

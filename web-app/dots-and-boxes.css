@@ -1,0 +1,184 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 1rem;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Game board */
+#game_board {
+    margin: 2rem auto;
+    max-width: 600px;
+    position: relative;
+}
+
+.dots-grid {
+    display: grid;
+    gap: 0;
+    width: 100%;
+}
+
+/* Elements */
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #333;
+    margin: auto;
+}
+
+.h-line,
+.v-line {
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.h-line {
+    height: 6px;
+    width: 100%;
+    margin: 3px 0;
+}
+
+.v-line {
+    width: 6px;
+    height: 100%;
+    margin: 0 3px;
+}
+
+.h-line:hover,
+.v-line:hover {
+    background-color: #999;
+}
+
+.h-line.drawn,
+.v-line.drawn {
+    background-color: #333;
+    cursor: default;
+}
+
+.box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Player information */
+.sidebar {
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 200px;
+}
+
+.player {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.game_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#home_player_color,
+#away_player_color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.5rem auto;
+}
+
+/* Game result dialog */
+dialog {
+    padding: 2rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+dialog h2 {
+    margin-bottom: 1rem;
+}
+
+dialog div {
+    margin-bottom: 0.5rem;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: 220px 1fr 220px;
+        grid-template-areas:
+            "header header header"
+            "home-sidebar main away-sidebar";
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    #home_player {
+        grid-area: home-sidebar;
+    }
+
+    #away_player {
+        grid-area: away-sidebar;
+    }
+}
+
+/* Layout for mobile */
+@media (max-width: 767px) {
+    .sidebar {
+        width: 100%;
+    }
+}
